@@ -4,15 +4,13 @@ import DisplayCard from '@/components/DisplayCard'
 import {
   Carousel,
   CarouselContent,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 
 
 function App() {
   console.log("data", data)
   return (
-    <>
+    <div className='preview flex min-h-[350px] w-full justify-center p-10 items-center'>
       <Carousel
         opts={{
           align: "start",
@@ -26,10 +24,10 @@ function App() {
             return <DisplayCard key={id} creator={creator} looks={looks} />
           })}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {/* <CarouselPrevious /> */}
+        {/* <CarouselNext /> */}
       </Carousel>
-    </>
+    </div>
   )
 
 
