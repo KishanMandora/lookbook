@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# LookBook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An app that allows users to create and share their own lookbooks and buy the Fashion items they like.
 
-Currently, two official plugins are available:
+The goals was to create mobile first user interface that is easy to use and navigate.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Created a dummy data for the app to display.
+   - The dummy Data contains looks of users
+   - the looks contain the items that the user is wearing in the look
+   - the items contain the name of the item, the brand, the price and the image of the item
 
-## Expanding the ESLint configuration
+## Existing Features
+- Users can view the looks of other users
+- Auto Scroll through the different looks
+- Users can view the items in the looks of other users
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features Left to Implement
+- Adding videos to the looks
 
-- Configure the top-level `parserOptions` property like this:
+## Problems with current version
+- The Carousel scroll affects the items link in the looks
+- The Carousel causes UI issues on Refresh
+- The Carousel keeps on scrolling even when the look is not in the view
+- The app is not responsive for Desktop
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Better ways to implement the app 
+- Check for ways to stop carousel slide on drag
+- Remove the looks from DOM when not in view
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies Used
+- UI Library: React
+- Styling: Tailwind CSS
+- UI Components: ShadCN
+- Language: TypeScript
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## How to run the app
+- Clone the repo
+- Run `pnpm install`
+- Run `pnpm dev`
+- Open `http://localhost:5173/` in your browser
+- To build the app run `pnpm build`
